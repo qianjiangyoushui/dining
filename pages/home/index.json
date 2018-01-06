@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "wxc-toast": "../../packages/@minui/wxc-toast/dist/index",
+    "wxc-label": "../../packages/@minui/wxc-label/dist/index",
+    "layout-head": "../../common/layout/head",
+    "layout-foot": "../../common/layout/foot"
+  }
+}

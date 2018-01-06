@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/index",
+    "pages/user/login",
+    "pages/circle/circle",
+    "pages/circleinfo/circleinfo"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#efefef",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "种土豆",
+    "navigationBarTextStyle": "black"
+  },
+  "networkTimeout": {
+    "request": 50000
+  }
+}

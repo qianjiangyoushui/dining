@@ -1,0 +1,51 @@
+<view>
+ <wxc-flex class="wrap" dir='-top' main="center" cross="center">
+    <view class="item">
+     <wxc-cc class="demo">
+    <image class="" src="https://www.nmamtf.club/images/background/circle_background.jpg" mode="aspectFit"></image>
+      </wxc-cc>
+    </view>
+    <view class="item">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                      <view class="weui-label">用户名:</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                      <input class="weui-input" name="user_name" placeholder="请输入种土豆用户名"/>
+                  </view>
+              </view>
+              <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                      <view class="weui-label">密码:</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                      <input class="weui-input" name="pass_word" password='true' placeholder="请输入密码"/>
+                  </view>
+              </view>             
+      </view>
+       <checkbox-group bindchange="bindAgreeChange">
+            <label class="weui-agree" for="weuiAgree">
+                <view class="weui-agree__text">
+                    <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+                    <view class="weui-agree__checkbox-icon">
+                        <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+                    </view>
+                    绑定微信号，下次进入不再需要输入密码
+                </view>
+            </label>
+        </checkbox-group>
+       <button class="weui-btn" size='defult'form-type='submit' type="primary">登录</button>
+      <button class="weui-btn" bindtap="gocircle"size='defult'   type="default">暂不登录，随便看看</button>
+      </form>
+    </view>
+
+    <view class="item">
+        <wxc-cc class="demo">
+        <image class="demo__pic" bindtap="previewImage" id="https://www.nmamtf.club/images/sucai/erweima.jpg"src="https://www.nmamtf.club/images/sucai/erweima.jpg" mode="aspectFit"></image>
+          </wxc-cc>
+    </view>
+  </wxc-flex>
+    
+</view>

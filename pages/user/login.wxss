@@ -1,0 +1,12 @@
+/* pages/user/login.wxss */
+@import "../../weui.wxss";
+  .demo {
+    display: block;
+    width: 100%;
+    height: 300rpx;
+    background: #f2f2f2;
+  }
+  .demo__pic {
+    width: 300rpx;
+    height: 300rpx;
+  }

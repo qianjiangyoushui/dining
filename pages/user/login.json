@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "wxc-cc": "../../packages/@minui/wxc-cc/dist/index",
+    "wxc-dialog": "../../packages/@minui/wxc-dialog/dist/index",
+    "layout-head": "../../common/layout/head",
+    "layout-foot": "../../common/layout/foot"
+  },
+  "navigationBarTitleText": "绑定登录",
+  "enablePullDownRefresh": false
+}
