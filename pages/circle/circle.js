@@ -6,30 +6,11 @@ var qcloud = require('../../vendor/wafer2-client-sdk/index');
 var constants = require('../../vendor/wafer2-client-sdk/lib/constants');
 // 引入配置
 var config = require('../../config');
-var base64 = require("../images/base64");
 // 显示繁忙提示
-var showBusy = text => wx.showToast({
-  title: text,
-  icon: 'loading',
-  duration: 10000
-});
 
-// 显示成功提示
-var showSuccess = text => wx.showToast({
-  title: text,
-  icon: 'success'
-});
 
 // 显示失败提示
-var showModel = (title, content) => {
-  wx.hideToast();
 
-  wx.showModal({
-    title,
-    content: JSON.stringify(content),
-    showCancel: false
-  });
-};
 var sliderWidth = 96;
 var page = 0;
 var size = 5;
@@ -46,7 +27,10 @@ Page({
     plat_all: config.service.plat_all,
     platByUser: config.service.platByUser,
     circleArray: [],
-    tabs: ["土豆圈", "我发的"],
+    tabs: [
+      { title: '土豆圈', content: '内容一' },
+      { title: '我发的', content: '内容二' }
+    ],
     tabIndex: 0,
     activeIndex: 0,
     sliderOffset: 0,
@@ -164,7 +148,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    
   },
 
   /**
@@ -216,34 +200,6 @@ Page({
       urls: url, // 需要预览的图片http链接列表
     })
   },
-  tabClick: function (e) {
-    page = 0;
-    var that = this;
-    var theurl = this.data.platByUser;
-    var tabIndex = e.currentTarget.id;
-    if (e.currentTarget.id == 1) {
-      this.setData({
-        circleArray: []
-      });
-      this.loadMore(that, that.data.platByUser);
-      theurl = this.data.platByUser;
-
-    } else {
-      this.setData({
-        circleArray: []
-      });
-      this.loadMore(that, that.data.plat_all);
-      theurl = this.data.plat_all;
-    };
-    wx.showLoading({
-      title: '加载中',
-    });
-    this.setData({
-      sliderOffset: e.currentTarget.offsetLeft,
-      activeIndex: e.currentTarget.id,
-      tabIndex: tabIndex
-    });
-  },
   bindDownLoad: function () {
     var that = this;
     page++;
@@ -255,22 +211,8 @@ Page({
 
     console.log("lower");
   },
-  scroll: function (event) {
-    //该方法绑定了页面滚动时的事件，我这里记录了当前的position.y的值,为了请求数据之后把页面定位到这里来。
-    this.setData({
-      scrollTop: event.detail.scrollTop
-    });
-  },
-  topLoad: function (event) {
-    //   该方法绑定了页面滑动到顶部的事件，然后做上拉刷新
-    page = 0;
-    this.setData({
-      list: [],
-      scrollTop: 0
-    });
-    this.loadMore(this);
-    console.log("lower");
-  },
+
+ 
   showIcon:function(e){
     var index = e.currentTarget.id;
     var curArray = this.data.circleArray;
@@ -450,4 +392,30 @@ Page({
       }
     });
   },
+ onClick: function (e) {
+   page = 0;
+   var that = this;
+   var theurl = this.data.platByUser;
+   var tabIndex = e.detail.key;
+   if (e.detail.key == 1) {
+     this.setData({
+       tabIndex:1,
+       circleArray: []
+     });
+     this.loadMore(that, that.data.platByUser);
+     theurl = this.data.platByUser;
+
+   } else {
+     this.setData({
+       tabIndex: 0,
+       circleArray: []
+     });
+     this.loadMore(that, that.data.plat_all);
+     theurl = this.data.plat_all;
+   };
+   wx.showLoading({
+     title: '加载中',
+   });
+   console.log(`ComponentId:${e.detail.componentId},you selected:${e.detail.key}`);
+ }
 })

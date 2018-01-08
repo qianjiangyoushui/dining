@@ -1,5 +1,5 @@
-<view class="page">
-<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;"  class="list" bindscrolltolower="bindDownLoad"  bindscroll="scroll">
+<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;"  class="list" bindscrolltolower="bindDownLoad"  >
+  
     <view class="flex-wrp" style="height: 150px;flex-direction:column;background-repeat:round" >  
       <view class="weui-grids">
             <block wx:for="{{grids}}" wx:for-item="grid" wx:key="*this.name">
@@ -10,20 +10,20 @@
             </block>
         </view> 
     </view>
-    
-        <view class='page_bd'>
-        <view class="weui-tab">
-            <view class="weui-navbar">
-                    <block wx:for="{{tabs}}" wx:key="*this">
-                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
-                        <view class="weui-navbar__title">{{item}}</view>
-                    </view>
-                </block>
-                    <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
-            </view>
-        <view class="weui-tab__panel">
-        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-        <block wx:for="{{circleArray}}" wx:key="{{circle.id}}"  wx:for-item="circle" wx:for-index="idx"  data-index="{{index}}">
+ <wxc-tab
+    bind:tabchange="onClick"
+    default-index="{{0}}"
+    component-id="c0"
+  >
+    <wxc-tab-panel
+      wx:for="{{tabs}}"
+      wx:for-item="tab"
+      wx:key="{{tab.content}}"
+      tab-index="{{index}}"
+      component-id="c0"
+      label="{{tab.title}}"
+    >
+    <block wx:for="{{circleArray}}" wx:key="{{circle.id}}"  wx:for-item="circle" wx:for-index="idx"  data-index="{{index}}">
             <view class="weui-panel__bd"style="border-top:1rpx solid #d9d9d9">
                 <view  class="weui-media-box weui-media-box_appmsg">
                     <view class="weui-media-box__hd_in-appmsg">
@@ -52,8 +52,8 @@
                               <wxc-icon  size="30" type="more" bindtap='showIcon'id="{{idx}}" ></wxc-icon>
                               <block wx:if="{{circle.operation}}">
                               <view class="operatorBar">
-                              <button class='btn_label' text="评论" bindtap="bindCommentClick"  style="padding-right:50rpx;">评论 </button>
-                              <button class='btn_label' text="赞" bindtap="bindSupportClick"  style="padding-right:50rpx;"> 赞</button>
+                              <button class='btn_label' text="评论" bindtap="bindCommentClick"  >评论 </button>
+                              <button class='btn_label' text="赞" bindtap="bindSupportClick"  > 赞</button>
                               <button class='btn_label' open-type="share" class='btn_label'>转发</button>
                               </view>
                               </block>
@@ -75,58 +75,11 @@
                 </view>
 		  </view><!----列表结束-->
     </block><!--x循环结束-->
-    </view>
-    <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
-    <block wx:for="{{circleArray}}" wx:key="{{circle.id}}"  wx:for-item="circle" wx:for-index="idx"  data-index="{{index}}">
-            <view class="weui-panel__bd"style="border-top:1rpx solid #d9d9d9">
-                <view  class="weui-media-box weui-media-box_appmsg">
-                    <view class="weui-media-box__hd_in-appmsg">
-                        <image class="weui-media-box__thumb"  src="{{circle.avatarUrl}}" mode="aspectFill"/>   
-                    </view>
-                    <view class="weui-media-box__bd_in-appmsg">
-                        <view class="nicename">{{circle.customer.customerNickname}}</view>
-                        <view class="contentcomment">{{circle.commentContent}}</view>
-                        <block wx:for="{{circle.urls}}" wx:key="{{image.id}}"  wx:for-item="image" data-index="{{index1}}"key="*this">
-                        <view class="weui-uploader__file"bindtap="previewImage" id="{{idx}}" name="{{index}}">
-                            <image class="weui-uploader__img" src="{{image}}" mode="aspectFill" />
-                        </view>
-                        </block>
-                        <block wx:for="{{circle.urls2}}" wx:key="{{image.id}}"  wx:for-item="image" data-index="{{index1}}"key="*this">
-                        <view class="weui-uploader__file"bindtap="previewImage" id="{{idx}}" name="{{index}}">
-                            <image class="weui-uploader__img" src="{{image}}" mode="aspectFill" />
-                        </view>
-                        </block>
-                        <wxc-flex  dir="left" main="start" cross="center">
-                        <text class="extendscomment"><text style='color:black;'>{{circle.extendInfo.address}}</text>   {{circle.userUnion.unionName}}  {{circle.extendInfo.unition}}   {{circle.catalogName}}({{circle.commentScore}}分)</text>
-                        </wxc-flex>
-                        <wxc-flex  dir="left" main="start" cross="center">
-                        <text style='color:black;font-size: 20rpx;'>{{circle.extendInfo.formatDate}}</text>
-                        </wxc-flex>
-                        <view style='background-color:#e5e5e5	;margin-top: 5px;'>
-                        <block wx:for="{{circle.circleSupports}}" wx:key="{{support.supportUser}}"  wx:for-item="support">
-                        <text><block wx:if="{{index==0?true:false}}">❤</block>{{support.supportUser}},<block wx:if="{{index==circle.circleSupports.length-1?true:false}}">\n</block></text>
-                        </block>
-                        <block wx:for="{{circle.circleComments}}" wx:key="{{comment.comment}}"  wx:for-item="comment" >
-                        <text bindtap='bindCommentClick'class="{{comment.userType==6?'leadercomment':''}}{{comment.userType==7?'servercomment':''}}"  id='{{comment.fromUser}}'>{{comment.fromUser}}<block wx:if="{{comment.toUser!=undefined}}"> {{'回复'+comment.toUser}}</block>：{{comment.comment}}\n</text>
-                        </block>
-                        </view>
-                        
-                    </view>
-                    
-                </view>
-                <view class="weui-media-box__info">
-                        <view class="weui-media-box__info__meta">{{}}</view>                         
-                </view>
-		  </view><!----列表结束-->
-    </block><!--x循环结束-->
-    
-    </view>
-	</view><!----end-page_bd-->	
-</view>
-</view> 
-</scroll-view>
-<wxc-flex wx:if="{{focus}}" class="wrap"dir="right" main="between" >
+    </wxc-tab-panel>
 
+  </wxc-tab>
+</scroll-view>
+   
+<wxc-flex wx:if="{{focus}}" class="wrap"dir="right" main="between" >
     <view class="item side"><textarea  class='textarea_bottom weui-input' auto-focus="{{focus}}" show-confirm-bar="true" fixed="true"auto-height="true" focus='{{focus}}' bindblur="bindblur" confirm="bindblur"/></view>
   </wxc-flex>
-</view>

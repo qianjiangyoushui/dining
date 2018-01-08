@@ -45,8 +45,7 @@
   }
   .operatorBar{
     margin-bottom: 5px;
-    background-color:#52a341;
-
+    background-color:#FFF;
   }
   .nicename{
     font-size: 30rpx;
@@ -76,8 +75,11 @@
   }
   .btn_label {
     display: inline-block;
-    font-size: 32rpx;
+    font-size: 28rpx;
     vertical-align: middle;
     overflow: hidden;
-    background-color:#52a341;
+    background-color:green;
+    margin-right:1px;
+    width:60px;
+    height:25px;
   }
