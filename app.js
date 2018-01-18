@@ -5,7 +5,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = App({
-  globalData: {},
+  globalData: {
+    exitFlag:true
+  },
   onLaunch: function onLaunch() {
     qcloud.setLoginUrl(config.service.loginUrl);
   },
