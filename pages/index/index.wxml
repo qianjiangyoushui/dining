@@ -1,0 +1,21 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__desc"></view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-grids">
+                <view bindtap='consolutionList' class="weui-grid" hover-class="weui-grid_active">
+                    <image class="weui-grid__icon" src="../images/askanswer.png" />
+                    <view class="weui-grid__label" >植保知识库</view>
+                </view>
+                <view bindtap='weather' class="weui-grid" hover-class="weui-grid_active">
+                    <image class="weui-grid__icon" src="../images/weather.png" />
+                    <view class="weui-grid__label" >种植区天气</view>
+                </view>
+                <view bindtap='protection' class="weui-grid" hover-class="weui-grid_active">
+                    <image class="weui-grid__icon" src="../images/zhibao_process.png" />
+                    <view class="weui-grid__label" >植保用药</view>
+                </view>
+        </view>
+    </view>
+</view>

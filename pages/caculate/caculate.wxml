@@ -1,0 +1,38 @@
+<view class="page">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="weui-cells weui-cells_after-title">
+     <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">种植亩数</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="size" name="size" placeholder="请输入种植亩数"/>
+                </view>
+     </view>
+     </view>
+     <view class="btn-area">
+     <button class="weui-btn" type="primary" plain="true" formType="submit">点击计算用量</button>
+  </view> 
+    </form>
+    <view class="blank_hight"></view>
+    <view class="page__bd page__bd_spacing">
+    <block wx:if="{{isshow==1}}">
+        <view class="weui-flex">
+            <view class="weui-flex__item"><view class="placeholder1">农药名称</view></view>
+            <view class="weui-flex__item"><view class="placeholder1">规格</view></view>
+            <view class="weui-flex__item"><view class="placeholder1">单位</view></view>
+            <view class="weui-flex__item"><view class="placeholder1">亩用量</view></view>
+            <view class="weui-flex__item"><view class="placeholder1">计算总量</view></view>
+        </view>
+    </block>    
+  <block wx:for="{{scheduleArray}}"  wx:for-item="data" data-index="{{index}}">
+      <view class="weui-flex">
+            <view class="weui-flex__item"><view class="placeholder">{{data.name}}</view></view>
+            <view class="weui-flex__item"><view class="placeholder">{{data.format}}</view></view>
+            <view class="weui-flex__item"><view class="placeholder">{{data.unit}}</view></view>
+            <view class="weui-flex__item"><view class="placeholder">{{data.volume}}</view></view>
+            <view class="weui-flex__item"><view class="placeholder">{{data.sum}}</view></view>
+      </view>
+  </block>
+    </view>
+</view>

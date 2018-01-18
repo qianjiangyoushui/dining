@@ -29,63 +29,44 @@ var showModel = (title, content) => {
     showCancel: false
   });
 };
-
+var loginStatus = false;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    verify_login: config.service.verify_login,
+    verify_login: config.service.verify_login
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    qcloud.clearSession();
     var that = this;
+    
+
+      // 登录之前需要调用 qcloud.setLoginUrl() 设置登录地址，不过我们在 app.js 的入口里面已经调用过了，后面就不用再调用了
       qcloud.login({
         success(result) {
-          //showSuccess('登录成功');
           console.log('登录成功', result);
-          qcloud.request({
-            // 要请求的地址
-            url: that.data.verify_login,
-            // 请求之前是否登陆，如果该项指定为 true，会在请求之前进行登录
-            login: false,
-            method: 'GET',
-
-            success(result) {
-              console.log('request success', result);
-              if (result.data.status==1){
-                var customer = result.data.customer;
-                wx.redirectTo({
-                  url: '../circle/circle?customer=' + JSON.stringify(customer),
-                })
-              }else{
-                wx.redirectTo({
-                  url: '../user/login',
-                })
-              }
-            },
-
-            fail(error) {
-              showModel('请求失败', error);
-              console.log('request fail', error);
-            },
-
-            complete() {
-              console.log('request complete');
-            }
-          });
         },
-
         fail(error) {
-          showModel('登录失败', error);
-          //console.log('登录失败', error);
+          console.log('登录失败', error);
+          qcloud.openSetting(function(){
+            qcloud.login({
+              success(result) {
+                console.log('登录成功', result);
+              }
+            });
+          },function(){
+            wx.redirectTo({
+              url: '../erro/erro',
+            })
+          })
         }
       });
- 
   },
 
   /**
@@ -134,5 +115,19 @@ Page({
   onShareAppMessage: function () {
 
   },
-
+consolutionList:function(){
+  wx.navigateTo({
+    url: '../consolution/list/list',
+  })
+},
+  weather:function(){
+    wx.navigateTo({
+      url: '../weather/weather'
+    })
+  },
+  protection:function(){
+    wx.navigateTo({
+      url: '../protection/protection',
+    })
+  }
 })

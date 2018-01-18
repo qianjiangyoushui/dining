@@ -11,10 +11,7 @@
         <view class="index-bd">
             Hello World
         </view>
-<view>
-  <!-- 以下是对一个自定义组件的引用 -->
-  <wxc-label class="label" type="corner">抽奖团</wxc-label>
-</view>
+
         <view class="index-ft">
             <view class="provider">Created by Min</view>
         </view>

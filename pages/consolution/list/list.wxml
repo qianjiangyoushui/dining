@@ -1,0 +1,74 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="weui-cells">
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+          <view class="weui-cell__bd">
+              <input class="weui-input" name='search' placeholder="搜索问题..." />
+          </view>
+          <view class="weui-cell__ft">
+              <button class="weui-btn" formType="submit">搜索</button>
+          </view>
+        </view>
+    </view>
+</form>
+ <wxc-tab
+    bind:tabchange="onClick"
+    default-index="{{tabIndex}}"
+    component-id="c0"
+  >
+    <wxc-tab-panel
+      wx:for="{{tabs}}"
+      wx:for-item="tab"
+      wx:key="{{tab.content}}"
+      tab-index="{{index}}"
+      component-id="c0"
+      label="{{tab.title}}"
+    >
+    <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;"  class="list" bindscrolltolower="bindDownLoad"  >
+
+    <block wx:for="{{circleArray}}" wx:key="{{circle.id}}"  wx:for-item="circle" wx:for-index="idx"  data-index="{{index}}">
+            <view class="weui-panel__bd"style="border-top:3px solid #cecece">
+                <view  class="weui-media-box weui-media-box_appmsg">
+                    <view class="weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb"  src="{{circle.askUser.avatarUrl}}" mode="aspectFill"/>   
+                    </view>
+                    <view class="weui-media-box__bd_in-appmsg">
+                        <view class="nicename">{{circle.askUser.nicename}}</view>
+                        <view class="contentcomment">{{circle.tittle}}</view>
+                        <block wx:for="{{circle.imagesList}}" wx:key="{{image.id}}"  wx:for-item="image" data-index="{{index1}}"key="*this">
+                        <view class="weui-uploader__file"bindtap="previewImage" id="{{idx}}" name="{{index}}">
+                            <image class="weui-uploader__img" src="{{image.path}}" mode="aspectFill" />
+                        </view>
+                        </block>
+                        <wxc-flex  dir="left" main="start" cross="center">
+                        <text class="extendscomment">{{circle.askDate}} {{circle.status==1?'待解决':'已解决'}} {{circle.bread}}  {{circle.plantArea}}  </text>
+                        </wxc-flex>
+                        <wxc-flex  dir="left" main="start" cross="center">
+                        <text style='color:black;font-size: 20rpx;'></text>
+                        </wxc-flex>
+                     </view>
+                </view>
+		  </view><!----列表结束-->
+      <wxc-flex class="operatorLine"  dir="right" main="start" cross="center">
+      <block wx:if="{{user.department.id==1}}">
+        <view class="operatorIcon" bindtap='reply'id="{{idx}}">
+          <wxc-icon  size="40" type="comment" color='green'></wxc-icon>
+          <text class="icon_type1">答复</text>
+        </view>
+        </block>
+        <block wx:if="{{circle.status==2}}">
+        <view class="operatorIcon" bindtap='viewDetail'id="{{idx}}">
+          <wxc-icon size="40" type="more" color='green'></wxc-icon>
+          <text class="icon_type1">查看答复</text>
+        </view>
+        </block>
+      </wxc-flex>
+    </block><!--x循环结束-->
+    </scroll-view>
+    </wxc-tab-panel>
+
+  </wxc-tab>
+
+<view class="wrap" >   
+<wxc-icon type="add" size='50'bindtap='takeAsk' ></wxc-icon>
+<text class="icon_type">提问</text>
+</view>

@@ -1,0 +1,78 @@
+<view class="page">
+   <!--
+    <view class="page__hd">
+        <view class="page__title">Uploader</view>
+        <view class="page__desc">上传组件</view>
+    </view>
+    -->
+    <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="page__bd">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" name="content" placeholder="这一刻的想法..." style="height: 3.3em" />
+                    <view class="weui-textarea-counter"></view>
+                </view>
+            </view><!--END-CELL-文本域-->
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                    <view class="weui-label">地点：</view>
+                </view>
+                <view class="weui-cell__bd input_cell_font" bindtap='chooseSite'>
+                    <view class="weui-select weui-select_in-select-after">{{name}}</view>
+                </view>
+            </view><!--end-cell-地点-->
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">合作社:</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="hezuoshe" placeholder="请输入合作社"/>
+                </view>
+            </view><!--end-cell-合作社-->
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">地块:</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="areaname" placeholder="请输入地块"/>
+                </view>
+            </view><!--地块-->
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                    <view class="weui-label">过程节点:</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindProcessChange" value="{{processesIndex}}" range="{{processes}}">
+                        <view class="weui-select weui-select_in-select-after">{{processes[processesIndex]}}</view>
+                    </picker>
+                </view>
+            </view><!--种植过程-->
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class="weui-uploader">
+                        <view class="weui-uploader__hd">
+                            <view class="weui-uploader__title">图片上传</view>
+                            <view class="weui-uploader__info">{{files.length}}/9</view>
+                        </view>
+                        <view class="weui-uploader__bd">
+                            <view class="weui-uploader__files" id="uploaderFiles">
+                                <block wx:for="{{files}}" wx:key="*this">
+                                    <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                                    </view>
+                                </block>
+                                
+                            </view>
+                            <view class="weui-uploader__input-box">
+                                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view><!---end-cell-->
+        </view><!--end-cells-->
+        <button class="weui-btn" disabled="{{disabled}}" form-type='submit'>发布</button>
+    </view><!--end-page_bd-->
+    </form><!--end-form-->
+</view><!---end-page-->

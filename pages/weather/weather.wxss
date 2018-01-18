@@ -1,0 +1,22 @@
+@import "../../weui.wxss";
+.placeholder1{
+    margin: 0.0 px;
+    padding: 0 0px;
+    text-align: center;
+    background-color: #4169E1;
+    height: 2.3em;
+    line-height: 2.3em;
+    color: #000000;
+    font-size: 10px;
+}
+.placeholder{
+    margin: 0.0 px;
+    padding: 0 0px;
+    text-align: center;
+    background-color: #FFFFFF;
+    height: 2.3em;
+    line-height: 2.3em;
+    color: #000000;
+    font-size: 10px;
+    font-weight: bold;
+}

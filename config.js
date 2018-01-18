@@ -42,6 +42,11 @@ var config = {
         plat_one: `${host}/weapp/platOne`,
         add_support: `${host}/weapp/addSupport`,
         add_comment: `${host}/weapp/addComment`,
+        cslt_add: `${host}/cslt/add`,
+        cslt_list: `${host}/cslt/list`,
+        cslt_detail: `${host}/cslt/detail`,
+        cslt_answer: `${host}/cslt/answer`,
+        cslt_upload: `${host}/cslt/upload`,
     }
 };
 

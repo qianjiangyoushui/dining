@@ -1,0 +1,3 @@
+/* pages/circle/circleadd/circleadd.wxss */
+@import "../../../weui.wxss";
+.input_cell_font{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;word-wrap:break-word;word-break:break-all}

@@ -1,0 +1,79 @@
+<view class="page">
+    <view class="page__hd">
+    </view>
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__section">
+            <view class="weui-article__title">{{tittle}}</view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3"> 1.用药品种</view>
+                    <view class="weui-article__p">
+                         <form bindsubmit="formSubmit" bindreset="formReset">
+                         <view class="weui-cells">
+                            <view class="weui-cell weui-cell_input weui-cell_vcode">
+                              <view class="weui-cell weui-cell_select">
+                                  <view class="weui-cell__hd" style="width: 105px">
+                                      <picker bindchange="bindCountryCodeChange" value="{{countryCodeIndex}}" range="{{countryCodes}}">
+                                          <view class="weui-select">{{countryCodes[countryCodeIndex]}}</view>
+                                      </picker>
+                                  </view>
+                                  <view class="weui-cell__bd weui-cell__bd_in-select-before">
+                                      <input class="weui-input" type='digit' name='sumwarter' placeholder="{{placeholder}}" />
+                                  </view>
+                              </view>
+                              <view class="weui-cell__ft">
+                                  <button class="weui-vcode-btn" formType="submit">计算</button>
+                              </view>
+                          </view>
+                        </view>
+                    </form>
+                    </view>
+                    <view class="weui-article__p">
+                      <view class="weui-flex">
+                          <view class="weui-flex__item"><view class="placeholder1">农药名称</view></view>
+                          <view class="weui-flex__item"><view class="placeholder1">规格</view></view>
+                          <view class="weui-flex__item"><view class="placeholder1">亩用量</view></view>
+                          <view class="weui-flex__item"><view class="placeholder1">总用药量</view></view>
+                          <view class="weui-flex__item"><view class="placeholder1">兑水(斤)</view></view>
+                      </view>
+                      <block wx:for="{{dataArray}}" wx:key="{{index}}"  wx:for-item="item" data-index="{{index}}">
+                          <view class="weui-flex">
+                                <view class="weui-flex__item"><view class="placeholder">{{item.name}}</view></view>
+                                <view class="weui-flex__item"><view class="placeholder">{{item.format}}</view></view>
+                                <view class="weui-flex__item"><view class="placeholder" >{{item.useage}}{{item.unit}}</view></view>
+                                <view class="weui-flex__item"><view class="placeholder">{{item.sumuseage}}{{item.unit}}</view></view>
+                                <view class="weui-flex__item"><view class="placeholder"><block wx:if="{{index==0}}">{{item.sumusewater}}</block></view></view>
+                          </view>
+                      </block> 
+                        <!--<image class="weui-article__img" bindtap='previewImage' id="{{table_image_id}}" src="{{table}}" mode="aspectFit" style="height: 180px" />-->
+                    </view>
+                     <view class="weui-article__p">1、喷药前准备好喷雾器、量杯、水桶及所需要用的药品。 </view>
+                     <view class="weui-article__p">2、洗干净15kg规格的喷雾器。 </view>
+                     <view class="weui-article__p">3、把少量干净的清水倒入喷雾器。 </view>
+                     <view class="weui-article__p">4、在水桶稀释每样所用的药后，依次倒入装有少量干净清水的喷雾器里。 </view>
+                     <view class="weui-article__p">5、所有药倒入喷雾器之后，再加满干净的清水，即可盖住喷雾器，进行田间喷雾了。 </view>
+                </view><!--end-weui-article__section-->
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">2. 预防病虫</view>
+                    <view class="weui-article__p">{{section_tittle}}</view>
+                    <view class="weui-article__p" style='font-weight:bolder;'>{{section_1_h}}</view>
+                     <view class="weui-article__p">{{section_1}} </view>
+                     <view class="weui-article__p">
+                        <image bindtap='previewImage' id="{{section_1_image_1_id}}" class="weui-article__img" src="{{section_1_image_1}}" mode="aspectFit" style="height: 180px" /><image class="weui-article__img" bindtap='previewImage' id="{{section_1_image_2_id}}" src="{{section_1_image_2}}" mode="aspectFit" style="height: 180px" />
+                    </view>
+                    <view class="weui-article__p" style='font-weight:bolder;'>{{section_2_h}}</view>
+                     <view class="weui-article__p">{{section_2}}</view>
+                     <view class="weui-article__p">
+                        <image class="weui-article__img" bindtap='previewImage' id="{{section_2_image_1_id}}" src="{{section_2_image_1}}" mode="aspectFit" style="height: 180px" /><image class="weui-article__img" bindtap='previewImage' id="{{section_2_image_2_id}}" src="{{section_2_image_2}}" mode="aspectFit" style="height: 180px" />
+                    </view>
+                    <view class="weui-article__p" style='font-weight:bolder;'>{{section_3_h}}</view>
+                     <view class="weui-article__p">{{section_3}}</view>
+                     <view class="weui-article__p">
+                        <image class="weui-article__img" bindtap='previewImage' id="{{section_3_image_1_id}}" src="{{section_3_image_1}}" mode="aspectFit" style="height: 180px" /><image class="weui-article__img" bindtap='previewImage' id="{{section_3_image_2_id}}" src="{{section_3_image_2}}" mode="aspectFit" style="height: 180px" />
+                    </view>
+                </view><!--end-weui-article__section-->
+            </view>
+        </view>
+
+    </view><!--end page_bd-->
+</view><!--end page-->

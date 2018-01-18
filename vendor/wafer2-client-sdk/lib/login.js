@@ -1,7 +1,20 @@
 var utils = require('./utils');
 var constants = require('./constants');
 var Session = require('./session');
-
+var openSetting = function openSetting(callback1,callback2){
+  wx.openSetting({
+    success: function (data) {
+      if (data.authSetting["scope.userInfo"] == true){
+        callback1();
+      }else{
+        callback2();
+      }
+    },
+    fail: function () {
+      console.info("设置失败返回数据");
+    }
+  });
+};
 /***
  * @class
  * 表示登录过程中发生的异常
@@ -106,7 +119,12 @@ var login = function login(options) {
 
                 // 成功地响应会话信息
                 if (data && data.code === 0 && data.data.skey) {
-                    var res = data.data
+                    var res = data.data;
+                    var user = data.user;
+                    if (user){
+                      Session.setUser(user);
+                      console.log(Session.getUser());
+                    }
                     if (res.userinfo) {
                         Session.set(res.skey);
                         options.success(userInfo);
@@ -155,5 +173,6 @@ var setLoginUrl = function (loginUrl) {
 module.exports = {
     LoginError: LoginError,
     login: login,
+    openSetting: openSetting,
     setLoginUrl: setLoginUrl,
 };

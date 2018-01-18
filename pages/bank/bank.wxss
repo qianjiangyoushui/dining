@@ -1,0 +1,2 @@
+/* pages/bank/bank.wxss */
+@import "../../weui.wxss";

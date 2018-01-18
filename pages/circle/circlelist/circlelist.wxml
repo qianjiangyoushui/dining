@@ -1,0 +1,37 @@
+<view class="flex-wrp circle-top-background" style="height: 150px;flex-direction:column;background-repeat:round" >
+</view>
+<view class='circle-add-view'>
+  <image class='circle-add-icon'  src='{{imageUrl}}' bindtap='takePoatoCircle'  mode='aspectFill'/>
+</view>
+ <wxc-tab bind:tabchange="onClick" default-index="{{tabIndex}}" component-id="c0" >
+  <wxc-tab-panel wx:for="{{tabs}}" wx:for-item="tab" wx:key="{{tab.content}}"  tab-index="{{index}}"  component-id="c0" label="{{tab.title}}">
+  <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;"  class="list" bindscrolltolower="bindDownLoad"  >
+
+<block wx:for="{{circleArray}}" wx:key="{{idx}}" wx:for-item="circle" wx:for-index="idx"  data-index="{{index}}">
+            <view class="weui-panel__bd"style="border-top:1rpx solid #d9d9d9">
+                <view  class="weui-media-box weui-media-box_appmsg">
+                    <view class="weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="{{circle.user.avatarUrl}}" mode="aspectFill"/>
+                    </view>
+                    <view class="weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title_1">{{circle.user.nicename}}</view>
+                        <view class="weui-media-box__desc_1">{{circle.content}}</view>
+                        <block wx:for="{{circle.imagesList}}" wx:key="{{image.id}}" wx:for-item="image" data-index="{{index1}}"key="*this">
+                        <view class="weui-uploader__file"bindtap="previewImage" id="{{idx}}" name="{{index}}">
+                            <image class="weui-uploader__img" src="{{image.path}}" mode="aspectFill" />
+                        </view>
+                        </block>
+                    </view>
+                    
+                </view>
+                <view class="weui-media-box__info">
+                        <view class="weui-media-box__info__meta">{{circle.hezuoshename}}</view>
+                        <view class="weui-media-box__info__meta">{{circle.areaName}}</view>
+                        <view class="weui-media-box__info__meta">{{circle.createDate}}-{{circle.pricess}}</view>
+                        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{circle.name}}</view>                          
+                </view>
+		  </view><!----列表结束-->
+    </block><!--x循环结束-->
+  </scroll-view>
+  </wxc-tab-panel>
+  </wxc-tab>

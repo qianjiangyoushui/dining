@@ -1,17 +1,48 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/home/index",
+    "pages/consolution/add/add",
+    "pages/consolution/answer/answer",
+    "pages/consolution/detail/detail",
+    "pages/consolution/list/list",
+    "pages/circle/circleadd/circleadd",
+    "pages/circle/circlelist/circlelist",
+    "pages/protection/protection",
+    "pages/protection/first/first",
+    "pages/weather/weather",
+    "pages/setting/setting",
+    "pages/bank/bank",
     "pages/user/login",
-    "pages/circle/circle",
-    "pages/circleinfo/circleinfo"
+    "pages/home/index"
   ],
   "window": {
     "backgroundTextStyle": "dark",
     "backgroundColor": "#efefef",
     "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "种土豆",
+    "navigationBarTitleText": "potato",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath":"pages/images/icon_component.png",
+        "selectedIconPath":"pages/images/icon_component_HL.png",
+        "text": "业务"
+      },
+      {
+        "pagePath": "pages/circle/circlelist/circlelist",
+        "iconPath":"pages/images/icon_API.png",
+        "selectedIconPath":"pages/images/icon_API_HL.png",
+        "text": "记录"
+      },
+      {
+        "pagePath": "pages/setting/setting",
+        "iconPath":"pages/images/wechat.png",
+        "selectedIconPath":"pages/images/wechatHL.png",
+        "text": "个人"
+      }
+    ]
   },
   "networkTimeout": {
     "request": 50000

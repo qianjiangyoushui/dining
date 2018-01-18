@@ -1,0 +1,55 @@
+ <wxc-tab
+    bind:tabchange="onClick"
+    default-index="{{0}}"
+    component-id="c0"
+  >
+    <wxc-tab-panel
+      wx:for="{{tabs}}"
+      wx:for-item="tab"
+      wx:key="{{tab.content}}"
+      tab-index="{{index}}"
+      component-id="c0"
+      label="{{tab.title}}"
+    >
+    
+  <view class="weui-cell" style='color:red;'>API日期：{{scheduleArray[0].apidate}}</view>
+    <view class="page__bd page__bd_spacing">
+     <view class="weui-flex" wx:if="{{isshow==1}}">
+            <view><view class="placeholder1"></view></view>
+            <view class="weui-flex__item"><view class="placeholder1">今天</view></view>
+            <view class="weui-flex__item"><view class="placeholder1">明天</view></view>
+            <view class="weui-flex__item"><view class="placeholder1">后天</view></view>
+        </view>
+        <view class="weui-flex"wx:if="{{isshow==1}}">
+            <view class="weui-flex__item"><view class="placeholder1">乡镇</view></view>
+            <view class="weui-flex__item"><view class="placeholder1">温度范围</view></view>
+            <view class="weui-flex__item"><view class="placeholder1">白天天气</view></view>
+            <view class="weui-flex__item"><view class="placeholder1">夜间天气</view></view>
+            <view class="weui-flex__item"><view class="placeholder1">温度范围</view></view>
+            <view class="weui-flex__item"><view class="placeholder1">白天天气</view></view>
+            <view class="weui-flex__item"><view class="placeholder1">夜间天气</view></view>
+            <view class="weui-flex__item"><view class="placeholder1">温度范围</view></view>
+            <view class="weui-flex__item"><view class="placeholder1">白天天气</view></view>
+            <view class="weui-flex__item"><view class="placeholder1">夜间天气</view></view>
+        </view>
+  <block wx:for="{{scheduleArray}}" wx:key="{{data.id}}"  wx:for-item="data" data-index="{{index}}">
+      <view class="weui-flex">
+            <view class="weui-flex__item"><view class="placeholder">{{data.name}}</view></view>
+            <view class="weui-flex__item"><view class="placeholder">{{data.range1}}</view></view>
+            <view class="weui-flex__item"><view class="placeholder">{{data.day1}}</view></view>
+            <view class="weui-flex__item"><view class="placeholder">{{data.night1}}</view></view>
+            <view class="weui-flex__item"><view class="placeholder">{{data.range2}}</view></view>
+            <view class="weui-flex__item"><view class="placeholder">{{data.day2}}</view></view>
+            <view class="weui-flex__item"><view class="placeholder">{{data.night2}}</view></view>
+            <view class="weui-flex__item"><view class="placeholder">{{data.range3}}</view></view>
+            <view class="weui-flex__item"><view class="placeholder">{{data.day3}}</view></view>
+            <view class="weui-flex__item"><view class="placeholder">{{data.night3}}</view></view>
+      </view>
+  </block>
+  </view>
+	
+    </wxc-tab-panel>
+
+  </wxc-tab>
+
+

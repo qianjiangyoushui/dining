@@ -1,0 +1,52 @@
+            <view class="weui-panel__bd"style="border-top:1rpx solid #d9d9d9">
+                <view  class="weui-media-box weui-media-box_appmsg">
+                    <view class="weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb"  src="{{consultation.askUser.avatarUrl}}" mode="aspectFill"/>   
+                    </view>
+                    <view class="weui-media-box__bd_in-appmsg">
+                        <view class="nicename">{{consultation.askUser.nicename}}</view>
+                        <view class="contentcomment">{{consultation.tittle}}</view>
+                        <block wx:for="{{consultation.imagesList}}" wx:key="{{image.id}}"  wx:for-item="image" wx:for-index="idx" key="*this">
+                        <view class="weui-uploader__file"bindtap="previewImage" id="{{idx}}">
+                            <image class="weui-uploader__img" src="{{image.path}}" mode="aspectFill" />
+                        </view>
+                        </block>
+                        <wxc-flex  dir="left" main="start" cross="center">
+                        <text class="extendscomment">{{consultation.askDate}} {{consultation.status==1?'待解决':'已解决'}} {{consultation.bread}}  {{consultation.plantArea}} \n</text>
+                        </wxc-flex>
+                     </view>
+                </view>
+
+		  </view><!----列表结束-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="page__bd">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" bindinput="featureInput" focus='{{featuresFocus}}' name="features" placeholder="填写病理特征"maxlength='500' style="height: 3.3em" />
+                    <view class="weui-textarea-counter">{{featureNum}}/500</view>
+                </view>
+            </view><!--END-CELL-文本域-->
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" bindinput='reasonInput' focus='{{reasonFocus}}' name="reason" placeholder="填写产生原因" maxlength='500' style="height: 3.3em" />
+                    <view class="weui-textarea-counter">{{reasonNum}}/500</view>
+                </view>
+            </view><!--END-CELL-文本域-->
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" bindinput='measuresInput' focus='{{measuresFocus}}' name="measures" placeholder="填写预防措施"maxlength='500' style="height: 3.3em" />
+                    <view class="weui-textarea-counter">{{measuresNum}}/500</view>
+                </view>
+            </view><!--END-CELL-文本域-->
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" bindinput='suggestionInput' name="suggestion" placeholder="填写处理建议"maxlength='500' style="height: 3.3em" />
+                    <view class="weui-textarea-counter">{{suggestionNum}}/500</view>
+                </view>
+            </view><!--END-CELL-文本域-->
+        </view>
+    </view>
+    <button class="weui-btn"  disabled="{{disabled}}" type="primary"  form-type='submit'>完成</button>
+</form> 
+<view class="blank_hight"></view>     

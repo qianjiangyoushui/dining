@@ -1,0 +1,40 @@
+            <view class="weui-panel__bd"style="border-top:1rpx solid #d9d9d9">
+                <view  class="weui-media-box weui-media-box_appmsg">
+                    <view class="weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb"  src="{{consultation.askUser.avatarUrl}}" mode="aspectFill"/>   
+                    </view>
+                    <view class="weui-media-box__bd_in-appmsg">
+                        <view class="nicename">{{consultation.askUser.nicename}}</view>
+                        <view class="contentcomment">{{consultation.tittle}}</view>
+                        <block wx:for="{{consultation.imagesList}}" wx:for-index="idx" wx:key="{{image.id}}"  wx:for-item="image" data-index="{{index1}}"key="*this">
+                        <view class="weui-uploader__file"bindtap="previewImage" id="{{idx}}">
+                            <image class="weui-uploader__img" src="{{image.path}}" mode="aspectFill" />
+                        </view>
+                        </block>
+                        <wxc-flex  dir="left" main="start" cross="center">
+                        <text class="extendscomment">{{consultation.askDate}} {{consultation.status==1?'待解决':'已解决'}} {{consultation.bread}}  {{consultation.plantArea}} \n</text>
+                        </wxc-flex>
+                     </view>
+                </view>
+
+		  </view><!----列表结束-->
+
+<view class="page__bd" style='background-color:#chartreuse;'>
+<view class="weui-article">
+<block wx:for="{{consultation.answerList}}" wx:key="{{answer.id}}"  wx:for-item="answer" wx:for-index="idx"  data-index="{{index}}">
+<view class="lableview">
+<text class="labeltext">北繁南种研究院权威答复：</text>
+</view>
+  <view class="weui-article__section">
+      <view class="weui-article__h3">1.病理特征:</view>
+      <view class="weui-article__p">{{answer.features}}</view>
+      <view class="weui-article__h3">2.发病原因:</view>
+      <view class="weui-article__p">{{answer.reason}}</view>
+      <view class="weui-article__h3">3.采取措施:</view>
+      <view class="weui-article__p">{{answer.measures}}</view>
+      <view class="weui-article__h3">4.建议:</view>
+      <view class="weui-article__p">{{answer.suggestion}}</view>
+  </view>
+</block>    
+   </view>
+</view>

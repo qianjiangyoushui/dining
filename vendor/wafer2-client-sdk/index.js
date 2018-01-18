@@ -8,12 +8,13 @@ var exports = module.exports = {
     login: login.login,
     setLoginUrl: login.setLoginUrl,
     LoginError: login.LoginError,
-
+    openSetting: login.openSetting,
     clearSession: Session.clear,
     getSession:Session.get,
     request: request.request,
     RequestError: request.RequestError,
-
+    getUser: Session.getUser,
+    clearUser: Session.clearUser,
     Tunnel: Tunnel,
 };
 
