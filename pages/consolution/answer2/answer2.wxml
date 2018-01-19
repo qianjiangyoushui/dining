@@ -1,0 +1,16 @@
+<view class="page">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="page__bd">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" bindinput='tittleInput' focus='{{tittleFocus}}' name="suggestion" placeholder="回答追问的植保问题..." style="height: 3.3em" />
+                    <view class="weui-textarea-counter">{{tittleNum}}/200</view>
+                </view>
+            </view><!--END-CELL-文本域-->
+            <!--end-cell-地点--><!---end-cell-->
+        </view><!--end-cells-->
+        <button class="weui-btn"  disabled="{{disabled}}" type="primary"  form-type='submit'>提交</button>
+    </view><!--end-page_bd-->
+    </form><!--end-form-->
+</view><!---end-page-->

@@ -14,6 +14,7 @@ var exports = module.exports = {
     request: request.request,
     RequestError: request.RequestError,
     getUser: Session.getUser,
+    setUser: Session.setUser,
     clearUser: Session.clearUser,
     Tunnel: Tunnel,
 };

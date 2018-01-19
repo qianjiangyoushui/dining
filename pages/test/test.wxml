@@ -1,0 +1,107 @@
+<view class="listcard">
+<wxc-flex  dir="top" main="start" cross="start">
+  <wxc-flex dir="left" class="borderSet">
+    <wxc-avatar class="avatar__1" src="https://nmamtf.club/images/sucai/photo_camera.png" mold="square"></wxc-avatar>
+    <wxc-flex dir="top" class="username_flex">
+      <text class='username_text'>万里无云(贾晓东)</text>
+      <text class="username_text">2018-1-18</text>
+    </wxc-flex>
+  </wxc-flex>
+
+  <wxc-elip line="5" class="borderSet">这是一个很长的阶段。2行而已。这是一个很长的阶段。2行而已。这是一个很长的阶段。2行而已。这是一个很长的阶段。2行而已。这是一个很长的阶段。2行而已。这是一个很长的阶段。2行而已。这是一个很长的阶段。2行而已。这是一个很长的阶段。2行而已。这是一个很长的阶段。2行而已。</wxc-elip>
+
+  <wxc-flex dir="left" main="start" cross="start" wrap="wrap" class="borderSet">
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill" class="listImage"></image>
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill"class="listImage"></image>
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill"class="listImage"></image>
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill"class="listImage"></image>
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill"class="listImage"></image>
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill"class="listImage"></image>
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill"class="listImage"></image>
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill"class="listImage"></image>
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill"class="listImage"></image>
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill"class="listImage"></image>
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill"class="listImage"></image>
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill"class="listImage"></image>
+  </wxc-flex>
+
+  <wxc-flex dir="left" main="start" cross="start" wrap='wrap'>
+    <wxc-label class='labelText'>合作社</wxc-label>
+    <wxc-label class='labelText'>品种</wxc-label>
+    <wxc-label class='labelText'>种植地点</wxc-label>
+  </wxc-flex>
+
+  <wxc-flex class="buttonList" dir="left" main="around" cross="start" wrap='wrap'>
+  <view class="operatorIcon" bindtap='reply'id="{{idx}}">
+          <wxc-icon  size="40" type="comment" color='green'></wxc-icon>
+          <text class="icon_type1">答复</text>
+        </view>
+        <view class="operatorIcon" bindtap='reply'id="{{idx}}">
+          <wxc-icon  size="40" type="comment" color='green'></wxc-icon>
+          <text class="icon_type1">答复</text>
+        </view>
+        <view class="operatorIcon" bindtap='reply'id="{{idx}}">
+          <wxc-icon  size="40" type="comment" color='green'></wxc-icon>
+          <text class="icon_type1">答复</text>
+        </view>
+        <view class="operatorIcon" bindtap='reply'id="{{idx}}">
+          <wxc-icon  size="40" type="comment" color='green'></wxc-icon>
+          <text class="icon_type1">答复</text>
+        </view>
+   </wxc-flex>
+</wxc-flex>
+</view>
+
+<view class='listcard'>
+<wxc-flex  dir="top" main="start" cross="start">
+  <wxc-flex dir="left" class="borderSet">
+    <wxc-avatar class="avatar__1" src="https://nmamtf.club/images/sucai/photo_camera.png" mold="square"></wxc-avatar>
+    <wxc-flex dir="top" class="username_flex">
+      <text class='username_text'>万里无云(贾晓东)</text>
+      <text class="username_text">2018-1-18</text>
+    </wxc-flex>
+  </wxc-flex>
+
+  <wxc-elip class="borderSet" line="5">这是一个很长的阶段。2行而已。这是一个很长的阶段。2行而已。这是一个很长的阶段。2行而已。这是一个很长的阶段。2行而已。这是一个很长的阶段。2行而已。这是一个很长的阶段。2行而已。这是一个很长的阶段。2行而已。这是一个很长的阶段。2行而已。这是一个很长的阶段。2行而已。</wxc-elip>
+
+  <wxc-flex dir="left" main="start" cross="start" wrap="wrap"class="borderSet">
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill" class="listImage"></image>
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill"class="listImage"></image>
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill"class="listImage"></image>
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill"class="listImage"></image>
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill"class="listImage"></image>
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill"class="listImage"></image>
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill"class="listImage"></image>
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill"class="listImage"></image>
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill"class="listImage"></image>
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill"class="listImage"></image>
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill"class="listImage"></image>
+    <image src="https://nmamtf.club/images/sucai/photo_camera.png" mode="aspectFill"class="listImage"></image>
+  </wxc-flex>
+
+  <wxc-flex dir="left" main="start" cross="start" wrap='wrap'>
+    <wxc-label class='labelText'>合作社</wxc-label>
+    <wxc-label class='labelText'>品种</wxc-label>
+    <wxc-label class='labelText'>种植地点</wxc-label>
+  </wxc-flex>
+
+  <wxc-flex class="buttonList" dir="left" main="around" cross="start" wrap='wrap'>
+  <view class="operatorIcon" bindtap='reply'id="{{idx}}">
+          <wxc-icon  size="40" type="comment" color='green'></wxc-icon>
+          <text class="icon_type1">答复</text>
+        </view>
+        <view class="operatorIcon" bindtap='reply'id="{{idx}}">
+          <wxc-icon  size="40" type="comment" color='green'></wxc-icon>
+          <text class="icon_type1">答复</text>
+        </view>
+        <view class="operatorIcon" bindtap='reply'id="{{idx}}">
+          <wxc-icon  size="40" type="comment" color='green'></wxc-icon>
+          <text class="icon_type1">答复</text>
+        </view>
+        <view class="operatorIcon" bindtap='reply'id="{{idx}}">
+          <wxc-icon  size="40" type="comment" color='green'></wxc-icon>
+          <text class="icon_type1">答复</text>
+        </view>
+   </wxc-flex>
+</wxc-flex>
+</view>

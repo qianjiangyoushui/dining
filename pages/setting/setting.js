@@ -55,7 +55,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var user = qcloud.getUser();
+    this.setData({
+      user: user
+    });
   },
 
   /**
@@ -99,5 +102,11 @@ Page({
     wx.reLaunch({
       url: '../bank/bank',
     }) 
+  },
+  editinfo:function(){
+    wx.navigateTo({
+      url: '../user/editinfo/editinfo',
+    })
   }
+
 })

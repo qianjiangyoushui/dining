@@ -244,4 +244,18 @@ Page({
       this.loadMore(that, that.data.cslt_list, 2);
     };
   },
+  supple:function(e){
+    var index = e.currentTarget.id;
+    var obj = this.data.circleArray[index];
+    wx.navigateTo({
+      url: '../supplement/supplement?id=' + obj.id,
+    })
+  },
+  answer:function(e){
+    var index = e.currentTarget.id;
+    var obj = this.data.circleArray[index];
+    wx.navigateTo({
+      url: '../suppleanswer/suppleanswer?id=' + obj.id,
+    })
+  }
 })

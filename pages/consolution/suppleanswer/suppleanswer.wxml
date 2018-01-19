@@ -3,11 +3,9 @@
     <wxc-flex dir="left" class="borderSet">
       <image class="avatar__1" src="{{consultation.askUser.avatarUrl}}" mode="aspectFill"></image>
       <wxc-flex dir="top" class="username_flex">
-        <text class='username_text'>{{consultation.askUser.nicename}}{{consultation.askUser.name}}</text>
-        <wxc-flex dir="left" main="start"cross="center">
+        <text class='username_text'>{{consultation.askUser.nicename}}</text>
         <text class="username_text">{{consultation.askDate}}</text>
-        <wxc-label style='padding-left:5px;'>{{consultation.status==1?'待解决':'已解决'}} </wxc-label>
-        </wxc-flex>
+        <wxc-label>{{consultation.status==1?'待解决':'已解决'}} </wxc-label>
       </wxc-flex>
     </wxc-flex>
 
@@ -39,7 +37,7 @@
         <wxc-badge class="message__badge">专家</wxc-badge>
       </view>
       <wxc-flex dir="top" class="username_flex">
-        <text class='username_text'>{{answer.answerUser.nicename}}{{answer.answerUser.name}}</text>
+        <text class='username_text'>{{answer.answerUser.nicename}}</text>
         <text class="username_text">{{answer.answerDate}}</text>
       </wxc-flex>
     </wxc-flex>
@@ -59,9 +57,7 @@
   </wxc-flex>
 </view>
 </block>
-
 <block wx:for="{{consultation.suppleaskList}}" wx:key="{{supple.id}}"  wx:for-item="supple" wx:for-index="id"  data-index="{{index}}" >
-<view class='secondline'></view>
 <view class="listcard">
   <wxc-flex  dir="top" main="start" cross="start">
     <wxc-flex dir="left" class="borderSet">
@@ -70,7 +66,7 @@
         <wxc-badge class="message__badge">追问</wxc-badge>
       </view>
       <wxc-flex dir="top" class="username_flex">
-        <text class='username_text'>{{supple.askUser.nicename}}{{supple.askUser.name}}</text>
+        <text class='username_text'>{{supple.askUser.nicename}}</text>
         <text class="username_text">{{supple.askDate}}</text>
       </wxc-flex>
     </wxc-flex>
@@ -82,9 +78,17 @@
       <image src="{{image.path}}" bindtap="previewImage" id="{{idx}}" mode="aspectFill" class="listImage"></image>
       </block>
     </wxc-flex>
-    
+    <block wx:if="{{supple.status!=2}}">
+    <wxc-flex class="buttonList" dir="left" main="around" cross="start" wrap='wrap'>
+        <view class="operatorIcon" bindtap='replySupple' id="{{supple.id}}">
+          <wxc-icon  size="35" type="comment" color='green'></wxc-icon>
+          <text class="icon_type1">答复追加补充</text>
+        </view>
+   </wxc-flex>
+   </block>
   </wxc-flex>
 </view>
+<view class='secondline'></view>
 <block wx:for="{{supple.answerList}}" wx:key="{{suppleanswer.id}}"  wx:for-item="suppleanswer" wx:for-index="id"  data-index="{{index}}" >
 <view class="listcard">
   <wxc-flex  dir="top" main="start" cross="start">
@@ -94,7 +98,7 @@
         <wxc-badge class="message__badge">追答</wxc-badge>
       </view>
       <wxc-flex dir="top" class="username_flex">
-        <text class='username_text'>{{suppleanswer.answerUser.nicename}}{{suppleanswer.answerUser.name}}</text>
+        <text class='username_text'>{{suppleanswer.answerUser.nicename}}</text>
         <text class="username_text">{{suppleanswer.answerDate}}</text>
       </wxc-flex>
     </wxc-flex>

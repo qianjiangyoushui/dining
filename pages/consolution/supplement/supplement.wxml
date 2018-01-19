@@ -1,0 +1,39 @@
+<view class="page">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="page__bd">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" bindinput='tittleInput' focus='{{tittleFocus}}' name="tittle" placeholder="提出你追问的植保问题..." style="height: 3.3em" />
+                    <view class="weui-textarea-counter">{{tittleNum}}/200</view>
+                </view>
+            </view><!--END-CELL-文本域-->
+            <!--end-cell-地点-->
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class="weui-uploader">
+                        <view class="weui-uploader__hd">
+                            <view class="weui-uploader__title">图片上传</view>
+                            <view class="weui-uploader__info">{{files.length}}/9</view>
+                        </view>
+                        <view class="weui-uploader__bd">
+                            <view class="weui-uploader__files" id="uploaderFiles">
+                                <block wx:for="{{files}}" wx:key="*this">
+                                    <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                                    </view>
+                                </block>
+                                
+                            </view>
+                            <view class="weui-uploader__input-box">
+                                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view><!---end-cell-->
+        </view><!--end-cells-->
+        <button class="weui-btn"  disabled="{{disabled}}" type="primary"  form-type='submit'>提交</button>
+    </view><!--end-page_bd-->
+    </form><!--end-form-->
+</view><!---end-page-->

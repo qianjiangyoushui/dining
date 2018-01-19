@@ -26,42 +26,59 @@
     <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;"  class="list" bindscrolltolower="bindDownLoad"  >
 
     <block wx:for="{{circleArray}}" wx:key="{{circle.id}}"  wx:for-item="circle" wx:for-index="idx"  data-index="{{index}}">
-            <view class="weui-panel__bd"style="border-top:3px solid #cecece">
-                <view  class="weui-media-box weui-media-box_appmsg">
-                    <view class="weui-media-box__hd_in-appmsg">
-                        <image class="weui-media-box__thumb"  src="{{circle.askUser.avatarUrl}}" mode="aspectFill"/>   
-                    </view>
-                    <view class="weui-media-box__bd_in-appmsg">
-                        <view class="nicename">{{circle.askUser.nicename}}</view>
-                        <view class="contentcomment">{{circle.tittle}}</view>
-                        <block wx:for="{{circle.imagesList}}" wx:key="{{image.id}}"  wx:for-item="image" data-index="{{index1}}"key="*this">
-                        <view class="weui-uploader__file"bindtap="previewImage" id="{{idx}}" name="{{index}}">
-                            <image class="weui-uploader__img" src="{{image.path}}" mode="aspectFill" />
-                        </view>
-                        </block>
-                        <wxc-flex  dir="left" main="start" cross="center">
-                        <text class="extendscomment">{{circle.askDate}} {{circle.status==1?'待解决':'已解决'}} {{circle.bread}}  {{circle.plantArea}}  </text>
-                        </wxc-flex>
-                        <wxc-flex  dir="left" main="start" cross="center">
-                        <text style='color:black;font-size: 20rpx;'></text>
-                        </wxc-flex>
-                     </view>
-                </view>
-		  </view><!----列表结束-->
-      <wxc-flex class="operatorLine"  dir="right" main="start" cross="center">
-      <block wx:if="{{user.department.id==1}}">
+            <view class="listcard">
+<wxc-flex  dir="top" main="start" cross="start">
+  <wxc-flex dir="left" class="borderSet">
+    <image class="avatar__1" src="{{circle.askUser.avatarUrl}}" mode="aspectFill"></image>
+    <wxc-flex dir="top" class="username_flex">
+      <text class='username_text'>{{circle.askUser.nicename}}{{circle.askUser.name}}</text>
+      <wxc-flex dir="left" main="start" cross="center">
+      <text class="username_text">{{circle.askDate}}</text>
+      <wxc-label class="toplabelText">{{circle.status==1?'待解决':'已解决'}} </wxc-label><block wx:if="{{circle.supple!=circle.answer}}"><wxc-label class="toplabelText">追问</wxc-label></block>
+      </wxc-flex>
+    </wxc-flex>
+  </wxc-flex>
+
+  <wxc-elip line="3" class="borderSet">{{circle.tittle}}</wxc-elip>
+
+  <wxc-flex dir="left" main="start" cross="start" wrap="wrap" class="borderSet">
+    <block wx:for="{{circle.imagesList}}" wx:key="{{image.id}}"  wx:for-item="image" data-index="{{index1}}"key="*this">
+    <image src="{{image.path}}" bindtap="previewImage" id="{{idx}}" mode="aspectFill" class="listImage"></image>
+    </block>
+  </wxc-flex>
+
+  <wxc-flex dir="left" main="start" cross="start" wrap='wrap'>
+    <wxc-label class='labelText'wx:if="{{circle.unionName!=''}}">{{circle.unionName}} </wxc-label>
+    <wxc-label class='labelText' wx:if="{{circle.bread!=''}}">{{circle.bread}}</wxc-label>
+    <wxc-label class='labelText' wx:if="{{circle.plantArea!=''}}">{{circle.plantArea}} </wxc-label>
+  </wxc-flex>
+
+  <wxc-flex class="buttonList" dir="left" main="around" cross="start" wrap='wrap'>
+        <view class="operatorIcon" bindtap='viewDetail' id="{{idx}}">
+          <wxc-icon  size="35" type="feedback" color='green'></wxc-icon>
+          <text class="icon_type1">查看</text>
+        </view>
+        <block wx:if="{{circle.askUser.id==user.id}}">
+        <view class="operatorIcon" bindtap='supple'id="{{idx}}">
+          <wxc-icon  size="35" type="edit" color='green'></wxc-icon>
+          <text class="icon_type1">补充追问</text>
+        </view>
+        </block>
+        <block wx:if="{{user.department.id==1&&circle.status==1}}">
         <view class="operatorIcon" bindtap='reply'id="{{idx}}">
-          <wxc-icon  size="40" type="comment" color='green'></wxc-icon>
+          <wxc-icon  size="35" type="comment" color='green'></wxc-icon>
           <text class="icon_type1">答复</text>
         </view>
         </block>
-        <block wx:if="{{circle.status==2}}">
-        <view class="operatorIcon" bindtap='viewDetail'id="{{idx}}">
-          <wxc-icon size="40" type="more" color='green'></wxc-icon>
-          <text class="icon_type1">查看答复</text>
+        <block wx:if="{{user.department.id==1&&circle.supple!=circle.answer}}">
+        <view class="operatorIcon" bindtap='answer'id="{{idx}}">
+          <wxc-icon  size="35" type="coupon" color='green'></wxc-icon>
+          <text class="icon_type1">补充答复</text>
         </view>
         </block>
-      </wxc-flex>
+   </wxc-flex>
+</wxc-flex>
+</view>
     </block><!--x循环结束-->
     </scroll-view>
     </wxc-tab-panel>

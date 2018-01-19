@@ -1,3 +1,4 @@
+  <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;"  class="list" bindscrolltolower="bindDownLoad"  >
 <view class="flex-wrp circle-top-background" style="height: 150px;flex-direction:column;background-repeat:round" >
 </view>
 <view class='circle-add-view'>
@@ -5,8 +6,6 @@
 </view>
  <wxc-tab bind:tabchange="onClick" default-index="{{tabIndex}}" component-id="c0" >
   <wxc-tab-panel wx:for="{{tabs}}" wx:for-item="tab" wx:key="{{tab.content}}"  tab-index="{{index}}"  component-id="c0" label="{{tab.title}}">
-  <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;"  class="list" bindscrolltolower="bindDownLoad"  >
-
 <block wx:for="{{circleArray}}" wx:key="{{idx}}" wx:for-item="circle" wx:for-index="idx"  data-index="{{index}}">
             <view class="weui-panel__bd"style="border-top:1rpx solid #d9d9d9">
                 <view  class="weui-media-box weui-media-box_appmsg">
@@ -32,6 +31,7 @@
                 </view>
 		  </view><!----列表结束-->
     </block><!--x循环结束-->
-  </scroll-view>
+
   </wxc-tab-panel>
   </wxc-tab>
+</scroll-view>

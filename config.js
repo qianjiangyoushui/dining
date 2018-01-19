@@ -46,7 +46,10 @@ var config = {
         cslt_list: `${host}/cslt/list`,
         cslt_detail: `${host}/cslt/detail`,
         cslt_answer: `${host}/cslt/answer`,
+        cslt_answer2: `${host}/cslt/answer2`,
+        supple: `${host}/cslt/supple`,
         cslt_upload: `${host}/cslt/upload`,
+        edit_info: `${host}/weapp/editInfo`,
     }
 };
 

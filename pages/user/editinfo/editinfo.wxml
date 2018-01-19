@@ -1,0 +1,15 @@
+<view class="page">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="page__bd">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="name" placeholder="请输入真实姓名让大家知道你..." />
+                </view>
+            </view><!--END-CELL-文本域-->
+            <!--end-cell-地点--><!---end-cell-->
+        </view><!--end-cells-->
+        <button class="weui-btn"  disabled="{{disabled}}" type="primary"  form-type='submit'>保存</button>
+    </view><!--end-page_bd-->
+    </form><!--end-form-->
+</view><!---end-page-->

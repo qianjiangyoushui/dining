@@ -13,7 +13,12 @@
     "pages/setting/setting",
     "pages/bank/bank",
     "pages/user/login",
-    "pages/home/index"
+    "pages/home/index",
+    "pages/test/test",
+    "pages/consolution/supplement/supplement",
+    "pages/consolution/suppleanswer/suppleanswer",
+    "pages/consolution/answer2/answer2",
+    "pages/user/editinfo/editinfo"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -26,20 +31,20 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath":"pages/images/icon_component.png",
-        "selectedIconPath":"pages/images/icon_component_HL.png",
+        "iconPath": "pages/images/icon_component.png",
+        "selectedIconPath": "pages/images/icon_component_HL.png",
         "text": "业务"
       },
       {
         "pagePath": "pages/circle/circlelist/circlelist",
-        "iconPath":"pages/images/icon_API.png",
-        "selectedIconPath":"pages/images/icon_API_HL.png",
+        "iconPath": "pages/images/icon_API.png",
+        "selectedIconPath": "pages/images/icon_API_HL.png",
         "text": "记录"
       },
       {
         "pagePath": "pages/setting/setting",
-        "iconPath":"pages/images/wechat.png",
-        "selectedIconPath":"pages/images/wechatHL.png",
+        "iconPath": "pages/images/wechat.png",
+        "selectedIconPath": "pages/images/wechatHL.png",
         "text": "个人"
       }
     ]

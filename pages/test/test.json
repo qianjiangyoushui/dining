@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "wxc-cc": "../../packages/@minui/wxc-cc/dist/index",
+    "wxc-flex": "../../packages/@minui/wxc-flex/dist/index",
+    "wxc-icon": "../../packages/@minui/wxc-icon/dist/index",
+    "wxc-label": "../../packages/@minui/wxc-label/dist/index",
+    "wxc-elip": "../../packages/@minui/wxc-elip/dist/index",
+    "wxc-tab": "../../packages/@minui/wxc-tab/dist/index",
+    "wxc-tab-panel": "../../packages/@minui/wxc-tab/dist/panel",
+    "wxc-avatar":"../../packages/@minui/wxc-avatar/dist/index"
+  },
+  "navigationBarTitleText": "测试列表",
+  "enablePullDownRefresh": true
+}

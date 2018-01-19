@@ -1,6 +1,5 @@
 /* pages/consolution/answer/answer.wxss */
 @import "../../../weui.wxss";
-@import "../../../weui.wxss";
 .weui-media-box__desc_1{color:#999;line-height:1.2;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:6}
 .weui-media-box__title_1{width:auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;word-wrap:break-word;word-break:break-all}
 .weui-uploader__file{float:left;margin-right:9px;margin-bottom:9px;margin-top: 9px;}

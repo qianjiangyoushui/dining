@@ -8,8 +8,7 @@
     "wxc-tab": "../../../packages/@minui/wxc-tab/dist/index",
     "wxc-tab-panel": "../../../packages/@minui/wxc-tab/dist/panel",
     "wxc-badge": "../../../packages/@minui/wxc-badge/dist/index"
-    
   },
-  "navigationBarTitleText": "查看详细解答",
+  "navigationBarTitleText": "回复追加问答",
   "enablePullDownRefresh": true
 }
