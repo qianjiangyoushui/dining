@@ -50,7 +50,8 @@ Page({
     processesIndex: 0,
     disabled: false,
     tittleFocus:false,
-    tittleNum: 0
+    tittleNum: 0,
+    chooseDisable:true
   },
 
   /**
@@ -110,6 +111,17 @@ Page({
   },
   chooseImage: function (e) {
     var that = this;
+    var file = this.data.files;
+    if(file.length>8){
+      this.setData({
+        chooseDisable:false
+      })
+      return false;
+    }else{
+      this.setData({
+        chooseDisable: true
+      })
+    }
     wx.chooseImage({
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
@@ -151,6 +163,12 @@ Page({
       this.setData({
         tittleFocus:true
       });
+      return false;
+    }
+    if (this.data.files.length > 9){
+      wx.showToast({
+        title: '图片为9张',
+      })
       return false;
     }
     /***先保存主体信息，返回主体id，然后将图片保存到这个id所关联的信息下 */

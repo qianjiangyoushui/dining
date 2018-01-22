@@ -46,7 +46,7 @@ Page({
     cslt_list: config.service.cslt_list,
     cslt_detail: config.service.cslt_detail,
     supple: config.service.supple,
-    cslt_upload: config.service.cslt_upload,
+    cslt_upload: config.service.cslt_upload2,
     processesIndex: 0,
     disabled: false,
     tittleFocus: false,

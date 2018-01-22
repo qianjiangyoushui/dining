@@ -6,7 +6,7 @@
         <text class='username_text'>{{consultation.askUser.nicename}}{{consultation.askUser.name}}</text>
         <wxc-flex dir="left" main="start"cross="center">
         <text class="username_text">{{consultation.askDate}}</text>
-        <wxc-label style='padding-left:5px;'>{{consultation.status==1?'待解决':'已解决'}} </wxc-label>
+        <wxc-label style="padding-left:5px;"type-color="{{consultation.status==1?'#FF5777':'mediumseagreen'}}">{{consultation.status==1?'待解决':'已解决'}} </wxc-label>
         </wxc-flex>
       </wxc-flex>
     </wxc-flex>
@@ -20,9 +20,9 @@
     </wxc-flex>
 
     <wxc-flex dir="left" main="start" cross="start" wrap='wrap'>
-      <wxc-label class='labelText'wx:if="{{consultation.unionName!=''}}">{{consultation.unionName}} </wxc-label>
-      <wxc-label class='labelText' wx:if="{{consultation.bread!=''}}">{{consultation.bread}}</wxc-label>
-      <wxc-label class='labelText' wx:if="{{consultation.plantArea!=''}}">{{consultation.plantArea}} </wxc-label>
+      <wxc-label class='labelText'type-color="#ffffff" text-color="#000000"type="fill"wx:if="{{consultation.unionName!=''}}">{{consultation.unionName}} </wxc-label>
+      <wxc-label class='labelText'type-color="#ffffff" text-color="#000000"type="fill" wx:if="{{consultation.bread!=''}}">{{consultation.bread}}</wxc-label>
+      <wxc-label class='labelText'type-color="#ffffff" text-color="#000000"type="fill" wx:if="{{consultation.plantArea!=''}}">{{consultation.plantArea}} </wxc-label>
     </wxc-flex> 
   </wxc-flex>
 </view>
@@ -60,7 +60,7 @@
 </view>
 </block>
 
-<block wx:for="{{consultation.suppleaskList}}" wx:key="{{supple.id}}"  wx:for-item="supple" wx:for-index="id"  data-index="{{index}}" >
+<block wx:for="{{consultation.suppleaskList}}" wx:key="{{supple.id}}" wx:for-index="supply_index"  wx:for-item="supple">
 <view class='secondline'></view>
 <view class="listcard">
   <wxc-flex  dir="top" main="start" cross="start">
@@ -78,8 +78,8 @@
     <text class="borderSet">{{supple.tittle}}</text>
 
     <wxc-flex dir="left" main="start" cross="start" wrap="wrap" class="borderSet">
-      <block wx:for="{{supple.imagesList}}" wx:key="{{image.id}}"  wx:for-item="image" data-index="{{index1}}"key="*this">
-      <image src="{{image.path}}" bindtap="previewImage" id="{{idx}}" mode="aspectFill" class="listImage"></image>
+      <block wx:for="{{supple.imagesList}}" wx:key="{{image.id}}"   wx:for-item="image" key="*this">
+      <image src="{{image.path}}" bindtap="previewImageSupple" id="{{supply_index}}" mode="aspectFill" class="listImage"></image>
       </block>
     </wxc-flex>
     

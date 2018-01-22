@@ -208,4 +208,17 @@ Page({
       suggestionNum: e.detail.value.length
     });
   },
+  previewImageSupple: function (e) {
+    var index = e.currentTarget.id;
+    var supple = this.data.consultation.suppleaskList[index];
+    var images = supple.imagesList;
+    var url = new Array();
+    for (var i = 0; i < images.length; i++) {
+      url.push(images[i].path);
+    }
+    wx.previewImage({
+      current: url[index], // 当前显示图片的http链接
+      urls: url, // 需要预览的图片http链接列表
+    })
+  },
 })

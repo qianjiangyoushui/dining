@@ -49,6 +49,7 @@ var config = {
         cslt_answer2: `${host}/cslt/answer2`,
         supple: `${host}/cslt/supple`,
         cslt_upload: `${host}/cslt/upload`,
+        cslt_upload2: `${host}/cslt/upload2`,
         edit_info: `${host}/weapp/editInfo`,
     }
 };

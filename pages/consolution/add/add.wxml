@@ -49,7 +49,7 @@
                                 
                             </view>
                             <view class="weui-uploader__input-box">
-                                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                                <view class="weui-uploader__input" disabled="chooseDisable" bindtap="chooseImage"></view>
                             </view>
                         </view>
                     </view>
@@ -59,4 +59,5 @@
         <button class="weui-btn"  disabled="{{disabled}}" type="primary"  form-type='submit'>提交</button>
     </view><!--end-page_bd-->
     </form><!--end-form-->
+    <view class="blank_hight"></view>  
 </view><!---end-page-->

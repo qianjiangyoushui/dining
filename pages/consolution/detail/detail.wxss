@@ -12,6 +12,8 @@
   margin-right: 3px;
   padding-left: 3px;
   padding-right: 3px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   width: 96%;
 }
 .username_flex{
@@ -27,8 +29,8 @@
     height: 80rpx;
   }
   .listImage{
-    width: 73px;
-    height: 73px;
+    width: 112px;
+    height: 112px;
     margin-left: 3px;
     margin-top: 3px;
   }
@@ -46,9 +48,9 @@
   }
   .lableview{
     display: flex;
-    width: 200px;
+    width: 240px;
     height: 25px;
-    background-color: orange;
+    background-color: #00CD00;
   }
    .message {
     width: 100rpx;

@@ -1,38 +1,85 @@
 /* pages/consolution/answer/answer.wxss */
 @import "../../../weui.wxss";
-.weui-media-box__desc_1{color:#999;line-height:1.2;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:6}
-.weui-media-box__title_1{width:auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;word-wrap:break-word;word-break:break-all}
-.weui-uploader__file{float:left;margin-right:9px;margin-bottom:9px;margin-top: 9px;}
-.weui-uploader__img{display:block;width:60px;height:60px}
-.weui-media-box_appmsg{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:flex-start}
-.weui-media-box__info{margin-left:10px;margin-top:15px;padding-bottom:5px;color:#cecece;line-height:1em;list-style:none;overflow:hidden}
-.circle-add-view{width:100%;margin-right: 20px;display: flex;flex-direction: row-reverse;}
-  .wrap {
-    position:fixed;
-    bottom: 60px;
-    right: 10px;
-    z-index: 9999;
+.listcard{
+  width: 100%;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-top: 1rpx solid #cecece;
+  border-bottom: 1rpx solid #cecece;
+}
+.borderSet{
+  margin-left: 3px;
+  margin-right: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 96%;
+}
+.username_flex{
+  margin-left: 8px;
+}
+.username_text{
+  font-size: 28rpx;
+  color: black;
+}
+ .avatar__1 {
+   margin-top: 5px;
+    width: 80rpx;
+    height: 80rpx;
   }
-  .icon_type {
+  .listImage{
+    width: 112px;
+    height: 112px;
+    margin-left: 3px;
+    margin-top: 3px;
+  }
+  .labelText{
+    margin-top: 8px;
+    margin-left: 5px;
+  }
+  .buttonList{
+    width: 100%;
+    margin-top: 5px;
+    border-top: 1rpx solid #cecece;
+  }
+  .labeltext{
+    font-size: 35rpx;
+  }
+  .lableview{
+    display: flex;
+    width: 240px;
+    height: 25px;
+    background-color: #00CD00;
+  }
+   .message {
+    width: 100rpx;
+    height: 100rpx;
+    position: relative;
+  }
+  .message__avatar {
     display: block;
-    font-size: 28rpx;
+    width: 100rpx;
+    height: 100rpx;
   }
-  .operatorBar{
-    margin-bottom: 5px;
-    background-color:#FFF;
+  .message__badge {
+    position: absolute;
+    top: -16rpx;
+    right: -18rpx;
   }
-  .nicename{
-    font-size: 30rpx;
-    color: cornflowerblue;
+  .theline{
+    width: 100%;
+    display: block;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-top: 1rpx solid #cecece;
   }
-  .contentcomment{
-    font-size: 32rpx;
-    color: black;
+   .secondline{
+    width: 100%;
+    display: block;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-top: 5px solid #cecece;
   }
-  .extendscomment{
-    font-size: 28rpx;
-    font-weight: 10;
-    color: cornflowerblue;
-    line-height: 1;
-  }
+
  

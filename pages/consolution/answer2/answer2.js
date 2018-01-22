@@ -47,6 +47,7 @@ Page({
     cslt_detail: config.service.cslt_detail,
     supple: config.service.supple,
     cslt_upload: config.service.cslt_upload,
+    cslt_upload2: config.service.cslt_upload2,
     processesIndex: 0,
     disabled: false,
     tittleFocus: false,
@@ -178,7 +179,7 @@ Page({
           var fileArray = that.data.files;
           if (fileArray.length > 0) {
             for (var i = 0; i < fileArray.length; i++) {
-              that.uploadDIY(fileArray, successUp, failUp, i, fileArray.length, result.data.consultation.id);
+              that.uploadDIY(fileArray, successUp, failUp, i, fileArray.length, result.data.answer.id);
             }
           } else {
             wx.redirectTo({
@@ -222,7 +223,7 @@ Page({
     header[constants.WX_HEADER_SKEY] = qcloud.getSession();
     console.log("开始提交文件" + header[constants.WX_HEADER_SKEY]);
     wx.uploadFile({
-      url: that.data.cslt_upload,
+      url: that.data.cslt_upload2,
       filePath: filePaths[i],
       header: header,
       name: 'file',

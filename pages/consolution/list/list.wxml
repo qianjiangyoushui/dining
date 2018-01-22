@@ -34,23 +34,23 @@
       <text class='username_text'>{{circle.askUser.nicename}}{{circle.askUser.name}}</text>
       <wxc-flex dir="left" main="start" cross="center">
       <text class="username_text">{{circle.askDate}}</text>
-      <wxc-label class="toplabelText">{{circle.status==1?'待解决':'已解决'}} </wxc-label><block wx:if="{{circle.supple!=circle.answer}}"><wxc-label class="toplabelText">追问</wxc-label></block>
+      <wxc-label class="toplabelText" type-color="{{circle.status==1?'#FF5777':'mediumseagreen'}}">{{circle.status==1?'待解决':'已解决'}} </wxc-label><block wx:if="{{circle.supple!=circle.answer}}"><wxc-label class="toplabelText">追问</wxc-label></block>
       </wxc-flex>
     </wxc-flex>
   </wxc-flex>
 
   <wxc-elip line="3" class="borderSet">{{circle.tittle}}</wxc-elip>
 
-  <wxc-flex dir="left" main="start" cross="start" wrap="wrap" class="borderSet">
+  <wxc-flex dir="left" main="start" cross="center" wrap="wrap" class="borderSet">
     <block wx:for="{{circle.imagesList}}" wx:key="{{image.id}}"  wx:for-item="image" data-index="{{index1}}"key="*this">
     <image src="{{image.path}}" bindtap="previewImage" id="{{idx}}" mode="aspectFill" class="listImage"></image>
     </block>
   </wxc-flex>
 
   <wxc-flex dir="left" main="start" cross="start" wrap='wrap'>
-    <wxc-label class='labelText'wx:if="{{circle.unionName!=''}}">{{circle.unionName}} </wxc-label>
-    <wxc-label class='labelText' wx:if="{{circle.bread!=''}}">{{circle.bread}}</wxc-label>
-    <wxc-label class='labelText' wx:if="{{circle.plantArea!=''}}">{{circle.plantArea}} </wxc-label>
+    <wxc-label class='labelText' type-color="#ffffff" text-color="#000000"type="fill" text="{{circle.unionName}}" wx:if="{{circle.unionName!=''}}"></wxc-label>
+    <wxc-label class='labelText'type-color="#ffffff" text-color="#000000"type="fill" text="{{circle.bread}}"  wx:if="{{circle.bread!=''}}"></wxc-label>
+    <wxc-label class='labelText'type-color="#ffffff" text-color="#000000"type="fill" text="{{circle.plantArea}}" wx:if="{{circle.plantArea!=''}}"> </wxc-label>
   </wxc-flex>
 
   <wxc-flex class="buttonList" dir="left" main="around" cross="start" wrap='wrap'>
